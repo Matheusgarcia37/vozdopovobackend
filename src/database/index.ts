@@ -1,3 +1,7 @@
 import { createConnection } from 'typeorm'
 
-createConnection().then(() => console.log('👌 connected with database'))
+try {
+    createConnection().then(() => console.log('👌 connected with database'))
+} catch (error) {
+    console.log(error)
+}

@@ -1,12 +1,10 @@
 import { NextFunction, Request, Response } from 'express'
 import jwt from 'jsonwebtoken'
 
-type TokenPayLoad = {
+type ResponseTokenProps = {
     id: string;
     cidadeId: string;
     nome: string;
-    iat: number;
-    exp: number;
 }
 
 export default function authMiddleware (req: Request, res: Response, next: NextFunction) {
@@ -20,7 +18,7 @@ export default function authMiddleware (req: Request, res: Response, next: NextF
 
   try {
     const data = jwt.verify(token, process.env.KEY_HASH)
-    const { id, cidadeId, nome } = data as TokenPayLoad
+    const { id, cidadeId, nome } = data as ResponseTokenProps
 
     req.userId = id
     req.cidadeId = cidadeId

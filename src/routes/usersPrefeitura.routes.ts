@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import AuthControllerPrefeitura from '../controllers/AuthControllerPrefeitura'
-import usersPrefeituraController from '../controllers/usersPrefeituraController'
+import usersPrefeituraController from '../controllers/UsersPrefeituraController'
 
 const UserRouter = Router()
 

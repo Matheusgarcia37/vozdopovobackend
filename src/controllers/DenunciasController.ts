@@ -11,6 +11,7 @@ class DenunciasController {
       const repo = getRepository(Denuncia)
 
       let cidadao: any, denuncia: any
+      //Verifico se na requisição existe um cidadao, se sim a denuncia é identificada, se não, é uma denúncia anônima
       if (body.cidadao) {
         if (typeof body.cidadao === 'string' && typeof body.denuncia === 'string') {
           cidadao = JSON.parse(JSON.parse(JSON.stringify(body.cidadao)))
@@ -51,7 +52,7 @@ class DenunciasController {
         }
       }
 
-      denuncia.cidadeId = 'b1efc352-f437-4a3f-8f0a-593eccc4fc5d'// cidade id
+      denuncia.cidadeId = 'f28d6e53-d87c-43c2-8544-b51e0d297ba7'// cidade id
 
       const response = await repo.save(denuncia)
 
