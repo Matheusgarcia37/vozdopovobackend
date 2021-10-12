@@ -16,7 +16,19 @@ export class RegistroDeCidadao {
   telefone: number;
 
   @Column()
-  endereco: string
+  cep: number;
+
+  @Column()
+  endereco: string;
+
+  @Column()
+  numero: number;
+
+  @Column()
+  bairro: string;
+
+  @Column()
+  complemento: string;
 
   @OneToMany(type => Denuncia, registroDeCidadao => RegistroDeCidadao)
   denuncias: Denuncia
