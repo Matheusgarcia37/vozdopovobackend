@@ -51,7 +51,7 @@ class DenunciasController {
         }
       }
 
-      denuncia.cidadeId = 'b1efc352-f437-4a3f-8f0a-593eccc4fc5d'// cidade id
+      denuncia.cidadeId = '082aad5d-5fa2-42c2-9031-42ab7fd1a9d3'// cidade id
 
       const response = await repo.save(denuncia)
 
